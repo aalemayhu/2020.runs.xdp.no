@@ -16,9 +16,11 @@ tag app-root
 		window.location.pathname.match(/debug/)
 
 	def mount
+		self.fetching = true
 		const cached = localStorage.getItem('events')
 		if cached
 			self.events = JSON.parse(cached)
+			self.fetching = false
 			imba.commit()
 		else 
 			self.fetchEvents()
