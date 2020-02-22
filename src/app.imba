@@ -3,7 +3,7 @@
 import './event-item'
 
 tag app-root
-	@title = "2020 Runs 🏃🏾‍♂️💨"
+	@title = "A. Alemayhu - 2020 Runs 🏃🏾‍♂️💨"
 	
 	def fetchEvents
 		self.fetching = true
@@ -61,4 +61,4 @@ tag app-root
 					<li>
 						"Built with " 
 						<a href="https://github.com/imba/imba"> "Imba"
-					<li> <a href="https://github.com/imba/imba"> <i.fab.fa-github>
+					<li> <a href="https://github.com/scanf/2020.runs.xdp.no"> <i.fab.fa-github>
