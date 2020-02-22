@@ -1,5 +1,7 @@
 # import 'bulma/css/bulma.css'
 
+import './event-item'
+
 tag app-root
 	@title = "2020 Runs 🏃🏾‍♂️💨"
 	
@@ -25,22 +27,38 @@ tag app-root
 		else 
 			self.fetchEvents()
 
+	### css
+				footer ul {
+					display: flex;
+					justify-content: space-between;
+				}
+
+				li {list-style-type: none;}
+				.footer {
+					position: absolute;
+					width: 100%;
+					bottom: 0;
+				}
+	###
 	def render
 		<self>
 			<section.section>
 				<div.container>
 					<h1.title> self.title
 					<hr>
+					<p> "Please note that lists will keep on changing all throughout the year."
 					<p class="subtitle">
 						<button.button.is-pulled-right.is-loading=(self.fetching) :click.fetchEvents> "🔄"
 					<ul>
-					### css scoped
-					li {list-style-type: none;}
-					###
 					for event of @events
-						<li.title.is-4>
-							"{event['Måned']}: "
-							<a href="{event['Url']}"> <strong> "{event['Løp']}"
+						<event-item payload=event>
 				if self.isDebug()
 					<hr>
 					<code> JSON.stringify(@events)
+			<footer.footer>
+				<ul>
+					<li> "© 2020 Alexander Alemayhu."
+					<li>
+						"Built with " 
+						<a href="https://github.com/imba/imba"> "Imba"
+					<li> <a href="https://github.com/imba/imba"> <i.fab.fa-github>
