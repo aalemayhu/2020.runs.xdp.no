@@ -44,11 +44,11 @@ tag app-root
 		<self>
 			<section.section>
 				<div.container>
-					<h1.title> self.title
-					<hr>
-					<p> "Please note that lists will keep on changing all throughout the year."
-					<p class="subtitle">
+					<h1.title> 
+						self.title
 						<button.button.is-pulled-right.is-loading=(self.fetching) :click.fetchEvents> "🔄"
+					<hr>
+					<p.notification> "Please note that the list will keep on changing all throughout the year."
 					<ul>
 					for event of @events
 						<event-item payload=event>
